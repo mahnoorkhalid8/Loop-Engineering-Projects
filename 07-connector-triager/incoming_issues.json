@@ -1,0 +1,30 @@
+[
+  {
+    "external_id": "gh-101",
+    "project": "shipment-api",
+    "title": "Login crashes on Android when token expires mid-session",
+    "labels": ["bug"],
+    "urgent": true
+  },
+  {
+    "external_id": "gh-102",
+    "project": "shipment-api",
+    "title": "Add dark mode toggle to settings page",
+    "labels": ["feature-request"],
+    "urgent": false
+  },
+  {
+    "external_id": "gh-103",
+    "project": "shipment-api",
+    "title": "Docs typo: 'recieve' should be 'receive'",
+    "labels": ["docs"],
+    "urgent": false
+  },
+  {
+    "external_id": "gh-104",
+    "project": "legacy-billing",
+    "title": "Refund calculation off by a cent on split payments",
+    "labels": ["bug"],
+    "urgent": true
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "gh-101": {
+    "external_id": "gh-101",
+    "labels": [
+      "bug"
+    ],
+    "project": "shipment-api",
+    "title": "Login crashes on Android when token expires mid-session",
+    "urgent": true
+  },
+  "gh-102": {
+    "external_id": "gh-102",
+    "labels": [
+      "feature-request"
+    ],
+    "project": "shipment-api",
+    "title": "Add dark mode toggle to settings page",
+    "urgent": false
+  },
+  "gh-103": {
+    "external_id": "gh-103",
+    "labels": [
+      "docs"
+    ],
+    "project": "shipment-api",
+    "title": "Docs typo: 'recieve' should be 'receive'",
+    "urgent": false
+  }
+}
