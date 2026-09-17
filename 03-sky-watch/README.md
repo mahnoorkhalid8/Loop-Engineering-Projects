@@ -17,9 +17,11 @@ time.
 ```
 
 Data source: NASA's NeoWs (Near Earth Object Web Service),
-`https://api.nasa.gov/neo/rest/v1/feed`. Works out of the box with the
-public `DEMO_KEY` (rate-limited to 30 req/hr, 50/day). For heavier use,
-get a free key at https://api.nasa.gov and set `NASA_API_KEY`.
+`https://api.nasa.gov/neo/rest/v1/feed`. **A personal NASA API key is now
+configured** (set as a persistent `NASA_API_KEY` environment variable, and
+hardcoded as a fallback directly in `scripts/run_and_log.ps1` so the daily
+Scheduled Task always uses it regardless of environment-variable timing) —
+no longer relying on the shared, rate-limited `DEMO_KEY`.
 
 ## Proof it works (already run for you, live data)
 

@@ -3,93 +3,235 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Alex Rahman, a backend engineer specializing in event-driven systems and data pipelines." />
-  <title>Alex Rahman — Backend Engineer</title>
+  <meta name="description" content="Portfolio of Mahnoor Khalid, a full-stack developer and AI engineer in Karachi building agentic AI systems, Next.js applications, and FastAPI backends." />
+  <title>Mahnoor Khalid — Full Stack Developer &amp; AI Engineer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav>
+  <div class="noise-bg" aria-hidden="true"></div>
+
+  <nav class="topnav">
+    <span class="brand">MK</span>
+    <div class="navlinks">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
-    </nav>
-    <h1>Alex Rahman</h1>
-    <p class="tagline">Backend engineer who makes slow systems fast and fragile pipelines boring.</p>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">Full Stack Developer &amp; AI Engineer</p>
+    <h1>Mahnoor Khalid</h1>
+    <p class="tagline">
+      I build production-ready software around agentic AI — from
+      multi-platform assistants that act on your behalf, to the Next.js
+      and FastAPI systems that keep them running.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:mahnoorkhalid814@gmail.com" class="btn btn-primary">Say hello</a>
+      <a href="https://github.com/mahnoorkhalid8" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/mahnoor-khalid-547329244" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <p class="location">Karachi, Pakistan</p>
   </header>
 
   <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I'm a backend engineer based in Lahore, Pakistan, with six years of
-        experience building the unglamorous systems that keep companies
-        running: ledgers, event pipelines, and the APIs everything else
-        depends on. I like taking something slow and fragile and making it
-        fast and boring — boring, in backend systems, is the highest
-        compliment I know how to pay. Most recently I led a rewrite that
-        cut API latency by 85% and now spend a good part of my time
-        mentoring engineers earlier in their careers.
+    <section id="about" class="section">
+      <p class="section-label"><span>01</span> About</p>
+      <p class="about-text">
+        I'm a full-stack developer and AI engineer based in Karachi,
+        building software around agentic AI systems — assistants and
+        applications that don't just answer questions but take action.
+        My path here started in biochemistry, with a Master's and
+        Bachelor's from the University of Karachi, before shifting into
+        software through hands-on independent projects and an ongoing
+        specialization in Generative AI, Agentic AI, and cloud-applied
+        computing at the Governor House Initiative. That scientific
+        training shows up as a habit more than a credential: build
+        methodically, verify assumptions, and ship working software rather
+        than theory. Recent work spans Next.js and FastAPI applications,
+        JWT-secured backends, and autonomous agents that operate across
+        Gmail, WhatsApp, and other platforms. Before moving into
+        engineering, I spent several years teaching at Smart School,
+        Happy Palace Group of Schools, and Little Folk's School — a
+        background that still shows in how I write documentation and
+        technical explanations today.
       </p>
     </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <article>
-        <h3>Senior Backend Engineer — Northwind Logistics</h3>
-        <p class="dates">2023 – present</p>
-        <p>Led the rewrite of the shipment-tracking API from a monolith to
-        event-driven services, cutting p95 latency from 800ms to 120ms.
-        Mentored two junior engineers.</p>
-      </article>
-      <article>
-        <h3>Backend Engineer — Fintrack</h3>
-        <p class="dates">2020 – 2023</p>
-        <p>Built the ledger reconciliation pipeline processing 2M
-        transactions a day. Introduced automated testing that cut
-        production incidents by 60%.</p>
-      </article>
-      <article>
-        <h3>Junior Developer — Localhost Studio</h3>
-        <p class="dates">2019 – 2020</p>
-        <p>Built internal tooling for a small web agency, including a
-        client-invoicing dashboard and a static-site deploy pipeline.</p>
-      </article>
+    <section id="experience" class="section">
+      <p class="section-label"><span>02</span> Experience</p>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-dates">2024 – Present</div>
+          <div class="timeline-body">
+            <h3>AI &amp; Full Stack Developer</h3>
+            <p class="role-context">Independent Projects</p>
+            <p>
+              I design and ship full-stack products end to end —
+              autonomous AI agents, secure APIs, and deployed web
+              applications — across the four projects detailed below,
+              using Next.js, FastAPI, and modern agentic-AI tooling.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-dates">2019 – 2024</div>
+          <div class="timeline-body">
+            <h3>Lead / Assistant Educator</h3>
+            <p class="role-context">Smart School · Happy Palace Group of Schools · Little Folk's School</p>
+            <p>
+              I led and assisted classrooms across three institutions for
+              five years — the origin of the communication and
+              technical-documentation habits I now apply to project
+              reporting and developer docs.
+            </p>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>Python</li><li>Go</li><li>PostgreSQL</li><li>Kafka</li>
-        <li>AWS (ECS, RDS, SQS)</li><li>Docker</li><li>Terraform</li>
-        <li>System design</li><li>Mentoring</li>
-      </ul>
+    <section id="skills" class="section">
+      <p class="section-label"><span>03</span> Skills</p>
+
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>Languages &amp; Core Web</h4>
+          <ul class="skills-list">
+            <li>TypeScript</li><li>JavaScript</li><li>Python</li>
+            <li>HTML5</li><li>CSS3</li><li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <ul class="skills-list">
+            <li>React.js</li><li>Next.js (App Router)</li>
+            <li>Tailwind CSS</li><li>Docusaurus</li>
+            <li>Responsive UI/UX</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Backend &amp; APIs</h4>
+          <ul class="skills-list">
+            <li>Node.js</li><li>FastAPI</li><li>JWT Authentication</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>AI &amp; LLMs</h4>
+          <ul class="skills-list">
+            <li>Agentic AI</li><li>Generative AI</li>
+            <li>Prompt Engineering</li><li>Context Engineering</li>
+            <li>Chainlit</li><li>Streamlit</li>
+            <li>Claude · Gemini · Qwen APIs</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Data &amp; CMS</h4>
+          <ul class="skills-list">
+            <li>PostgreSQL</li><li>Sanity CMS</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Tooling</h4>
+          <ul class="skills-list">
+            <li>Git &amp; GitHub</li><li>Docker</li><li>Vercel</li>
+            <li>npm/pnpm</li><li>Postman</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <article>
-        <h3>ledger-diff</h3>
-        <p>An open-source CLI that diffs two accounting exports and flags
-        reconciliation mismatches. ~400 GitHub stars.</p>
-      </article>
-      <article>
-        <h3>shiplog</h3>
-        <p>A small Go library for structured event logging, used
-        internally at two companies before being open-sourced.</p>
-      </article>
+    <section id="projects" class="section">
+      <p class="section-label"><span>04</span> Projects</p>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Personal AI Multi-Platform Employee Agent</h3>
+          <p>
+            I designed and deployed an autonomous assistant that manages
+            workflows across Gmail, WhatsApp, LinkedIn, Facebook, Instagram,
+            and Twitter — reading, synthesizing, and drafting context-aware
+            responses through platform-specific REST APIs, with
+            conversational memory and agentic decision-making underneath.
+          </p>
+          <ul class="tech-tags">
+            <li>Python</li><li>Next.js</li><li>TypeScript</li>
+            <li>Kubernetes</li><li>Docker</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3>Physical AI Humanoid Robotics Educational Portal</h3>
+          <p>
+            I built a documentation and learning portal on Docusaurus,
+            with a JWT-secured Node.js backend for registration and session
+            management, and embedded a Gemini-powered chat assistant that
+            guides students through robotics and physics concepts in real
+            time.
+          </p>
+          <ul class="tech-tags">
+            <li>Docusaurus</li><li>Node.js</li><li>JWT</li><li>Gemini API</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3>AI-Powered Task Optimization Application</h3>
+          <p>
+            I built a full-stack task-tracking application with a
+            FastAPI-backed AI helper that prioritizes, categorizes, and
+            schedules tasks from natural-language input, with
+            JWT-authenticated routes and structured task data in
+            PostgreSQL.
+          </p>
+          <ul class="tech-tags">
+            <li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li>
+            <li>FastAPI</li><li>PostgreSQL</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <h3>Headless E-Commerce Watch Platform</h3>
+          <p>
+            I developed a responsive storefront for watches with Sanity
+            CMS as a headless backend, letting content creators manage
+            inventory, specs, and pricing without a redeploy — optimized
+            for SEO and static generation, and deployed to Vercel's edge
+            network.
+          </p>
+          <ul class="tech-tags">
+            <li>Next.js</li><li>Tailwind CSS</li><li>Sanity CMS</li><li>Vercel</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>alex.rahman.dev@example.com · github.com/example-alexr</p>
+    <section id="contact" class="section">
+      <p class="section-label"><span>05</span> Contact</p>
+      <p class="contact-text">
+        Open to full-stack and AI engineering roles, collaborations, and
+        interesting problems in agentic systems.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:mahnoorkhalid814@gmail.com">mahnoorkhalid814@gmail.com</a>
+        <a href="https://github.com/mahnoorkhalid8" target="_blank" rel="noopener">github.com/mahnoorkhalid8</a>
+        <a href="https://www.linkedin.com/in/mahnoor-khalid-547329244" target="_blank" rel="noopener">linkedin.com/in/mahnoor-khalid</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>B.Sc. Computer Science, University of the Punjab, 2019.</p>
+    <p class="footer-title">Education</p>
+    <ul class="edu-list">
+      <li><strong>Governor House Initiative (GIAP)</strong> — Generative AI, Agentic AI &amp; Cloud-Applied Computing <em>(ongoing)</em></li>
+      <li><strong>University of Karachi</strong> — M.Sc. Biochemistry, 2023 (First Division)</li>
+      <li><strong>University of Karachi</strong> — B.Sc. Biochemistry, 2022 (First Division)</li>
+      <li><strong>Govt. Degree College, Sheikh Zaid Center</strong> — Intermediate (Pre-Medical), 2019</li>
+      <li><strong>Institute for Learning &amp; Development</strong> — Matriculation (Science), 2017</li>
+    </ul>
   </footer>
 </body>
 </html>

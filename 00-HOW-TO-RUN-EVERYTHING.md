@@ -43,10 +43,12 @@ the demo site I built).
 ---
 
 ## Project 3 — Sky Watch
-**Requirements:** none extra. Optional: a free key from api.nasa.gov set
-as `NASA_API_KEY` env var if you outgrow the shared `DEMO_KEY`'s rate limit.
+**Requirements:** none — your personal NASA API key is already wired in
+(set as a persistent env var and hardcoded as a fallback in
+`run_and_log.ps1`), no longer on the shared `DEMO_KEY`.
 **Note:** a real Windows Scheduled Task is already registered and firing
-daily at 8:00 AM on this machine.
+daily at 8:00 AM on this machine, confirmed working with your key
+(`LastTaskResult 0`).
 **Steps:**
 1. Manual run: `cd "E:\Loop Engineering Projects\03-sky-watch"` then
    `python scripts\sky_watch.py`
@@ -92,16 +94,13 @@ Safe to re-run any time; it rebuilds `demo-repo/` from scratch each time.
 ---
 
 ## Project 6 — The Doorbell
-**Requirements to add before running (this one needs your own accounts):**
-1. A GitHub repository you own — push this folder's contents to it,
-   including `.github/workflows/claude-pr-review.yml`.
-2. Run `claude setup-token` on your machine to generate a token (uses
-   your Pro/Max plan usage, not a separate API key).
-3. In the GitHub repo: Settings → Secrets and variables → Actions → New
-   repository secret → name it `CLAUDE_CODE_OAUTH_TOKEN` → paste the token.
+**Requirements:** `CLAUDE_CODE_OAUTH_TOKEN` is already set as a repo
+secret on your GitHub repo (confirmed the workflow file references the
+exact same name). Only remaining step is pushing the code and opening a PR.
 
 **Steps:**
-1. Do the three requirements above.
+1. Push this folder's contents (including `.github/workflows/claude-pr-review.yml`)
+   to the GitHub repo where you set the secret, if not already done.
 2. Open a real pull request (the bugs in `demo-repo/cart.py` are already
    there and verified — push that as a branch and open a PR against it,
    or use your own code).
@@ -205,8 +204,8 @@ install the Claude GitHub App on your repo (Settings → Integrations —
 | Project | What only you can provide |
 |---|---|
 | 2 | Your real CV (optional — sample works) |
-| 3 | Nothing (optional: your own NASA API key) |
-| 6 | A GitHub repo, `claude setup-token`, a repo secret |
+| 3 | ~~NASA API key~~ done |
+| 6 | ~~GitHub secret~~ done — just push + open a PR |
 | 8 (real version) | Point it at your actual repo |
 | 9 | A claude.ai account with Routines access, to create the real Routine |
 | 11 (real version) | Claude GitHub App installed on your repo |
