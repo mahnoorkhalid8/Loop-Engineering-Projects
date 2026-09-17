@@ -1,0 +1,37 @@
+name: Claude PR Review (the Doorbell)
+
+# Event-driven heartbeat (Concept 7): nothing runs on a clock here. This
+# fires only when a pull request opens or gets new commits. Zero PRs on a
+# quiet day, several on a busy one.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  review:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Review with Claude
+        uses: anthropics/claude-code-action@v1
+        with:
+          # A Pro/Max plan token from `claude setup-token` works here --
+          # no API key needed, no research-preview access required, no
+          # daily run cap (unlike a cloud Routine). See README.md.
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt_file: 06-the-doorbell/review-prompt.md
+
+# NOTE (mechanical layer, check before relying on it): the exact input
+# names for anthropics/claude-code-action@v1 (claude_code_oauth_token,
+# prompt_file, etc.) can change as the action evolves. Confirm against
+# the action's own README before you rely on this file verbatim --
+# this is exactly the "docs win every disagreement" rule from the course.
