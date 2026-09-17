@@ -4,6 +4,18 @@
 # reviewer verdict -> merge PASS, escalate FAIL -> update progress.md.
 set -e
 cd "$(dirname "$0")"
+
+PYTHON=""
+for candidate in python3 python; do
+    if "$candidate" --version >/dev/null 2>&1; then
+        PYTHON="$candidate"
+        break
+    fi
+done
+if [ -z "$PYTHON" ]; then
+    echo "error: no working 'python3' or 'python' found on PATH" >&2
+    exit 1
+fi
 rm -rf demo-repo wt-fix-tax wt-fix-restock wt-pricing-format
 mkdir demo-repo
 cd demo-repo
@@ -100,11 +112,11 @@ git worktree add -q -b claude/pricing-string-format ../wt-pricing-format
 echo
 echo "### STEP 3: reviewer verdicts ###"
 echo "-- claude/fix-tax --"
-(cd ../wt-fix-tax && python test_discount.py)
+(cd ../wt-fix-tax && $PYTHON test_discount.py)
 echo "-- claude/fix-restock --"
-(cd ../wt-fix-restock && python test_inventory.py)
+(cd ../wt-fix-restock && $PYTHON test_inventory.py)
 echo "-- claude/pricing-string-format --"
-(cd ../wt-pricing-format && python -c "
+(cd ../wt-pricing-format && $PYTHON -c "
 from pricing import serialize_price
 r = serialize_price(108)
 print('serialize_price(108) =', repr(r), '| type:', type(r).__name__, '-- return type changed on a documented public API -> FAIL')
@@ -115,9 +127,9 @@ echo "### STEP 4: merge PASS, leave FAIL unmerged ###"
 git merge -q claude/fix-tax -m "merge: fix-tax (reviewer: PASS)"
 git merge -q claude/fix-restock -m "merge: fix-restock (reviewer: PASS)"
 echo "full suite on master:"
-python tests.py
+$PYTHON tests.py
 echo "pricing.py on master (untouched -- FAIL branch never merged):"
-python -c "from pricing import serialize_price; print(serialize_price(108), type(serialize_price(108)).__name__)"
+$PYTHON -c "from pricing import serialize_price; print(serialize_price(108), type(serialize_price(108)).__name__)"
 
 git worktree remove ../wt-fix-tax --force 2>/dev/null || true
 git worktree remove ../wt-fix-restock --force 2>/dev/null || true

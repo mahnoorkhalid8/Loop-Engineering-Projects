@@ -5,6 +5,18 @@
 # Safe to re-run any time; it deletes and recreates demo-repo/ each time.
 set -e
 cd "$(dirname "$0")"
+
+PYTHON=""
+for candidate in python3 python; do
+    if "$candidate" --version >/dev/null 2>&1; then
+        PYTHON="$candidate"
+        break
+    fi
+done
+if [ -z "$PYTHON" ]; then
+    echo "error: no working 'python3' or 'python' found on PATH" >&2
+    exit 1
+fi
 rm -rf demo-repo wt-fix-add wt-fix-even
 mkdir demo-repo
 cd demo-repo
@@ -62,7 +74,7 @@ echo "$AGENT_B_VERSION" > bugs.py
 echo "Agent B (started from the stale original) wrote its fix, overwriting A's."
 echo
 echo "--- result: Agent A's fix is gone ---"
-python tests.py || echo "(tests fail -- add() is still broken, proving the collision)"
+$PYTHON tests.py || echo "(tests fail -- add() is still broken, proving the collision)"
 echo
 
 git checkout -q -- bugs.py
@@ -88,7 +100,7 @@ echo "--- merged bugs.py: both fixes present ---"
 cat bugs.py
 echo
 echo "--- running tests on the merged result ---"
-python tests.py
+$PYTHON tests.py
 
 git worktree remove ../wt-fix-add 2>/dev/null || rm -rf ../wt-fix-add
 git worktree remove ../wt-fix-even 2>/dev/null || rm -rf ../wt-fix-even
